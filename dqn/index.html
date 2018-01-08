@@ -1,0 +1,34 @@
+<html>
+<body>
+	<button onclick="add()">+</button>
+	<button onclick="sub()">-</button>
+	<canvas id="canvas" width=640 height = 480>
+		Canvas not support
+	</canvas>
+</body>
+<script src="main.js" > </script>
+<script src="game.js" > </script>
+
+<script type="text/javascript">
+var cvs = document.getElementById("canvas");
+game.ctx = cvs.getContext("2d");
+main(game);
+
+function add()
+{
+	run_speed += 10;
+	window.clearInterval(run_loop);
+	section();
+}
+function sub()
+{
+	run_speed -= 10;
+	if(run_speed < 0)
+	{
+		run_speed = 1;
+	}
+	window.clearInterval(run_loop);
+	section();
+}
+</script>
+</html>
